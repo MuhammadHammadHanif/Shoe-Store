@@ -8,7 +8,7 @@ const Home = () => {
     <Fragment>
       <HeroBlock />
       <CategoryCollection title='WHAT TRENDING' start={0} end={4} />
-      <CategoryCollection title='NEW COLLECTION' start={0} end={4} />
+      <CategoryCollection title='NEW COLLECTION' start={3} end={8} />
     </Fragment>
   );
 };

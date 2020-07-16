@@ -19,6 +19,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Hidden from '@material-ui/core/Hidden';
+import { Link, BrowserRouter } from 'react-router-dom';
 
 import { secondaryMenu, primaryMenu } from '../../utils/MenuLinks';
 
@@ -210,6 +211,8 @@ const Header = () => {
                   label={menu.name}
                   className={classes.secondaryMenutab}
                   disableRipple
+                  to={menu.link}
+                  component={Link}
                 />
               ))}
             </Tabs>
@@ -220,7 +223,7 @@ const Header = () => {
             >
               <Tab
                 key={0}
-                label='Shopping Cart'
+                label='My Account'
                 className={classes.carttab}
                 disableRipple
               />

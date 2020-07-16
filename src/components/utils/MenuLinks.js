@@ -8,10 +8,6 @@ export const secondaryMenu = [
     link: '/about',
   },
   {
-    name: 'My Account',
-    link: '/account',
-  },
-  {
     name: 'Contact Us',
     link: '/contact',
   },
