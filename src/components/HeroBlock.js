@@ -29,7 +29,7 @@ const HeroBlock = () => {
   return (
     <div className={classes.heroContainer}>
       <img
-        src='/img/main-image.jpg'
+        src='/img/main-banner.jpg'
         className={classes.heroimage}
         alt='Hero Block'
       />
