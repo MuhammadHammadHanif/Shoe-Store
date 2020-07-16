@@ -70,6 +70,7 @@ export const GlobalProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         products: state.products,
+        getProducts,
       }}
     >
       {children}

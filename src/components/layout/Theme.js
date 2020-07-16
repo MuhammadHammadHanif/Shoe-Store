@@ -59,5 +59,11 @@ export default createMuiTheme({
         minHeight: 20,
       },
     },
+    MuiListItem: {
+      root: {
+        paddingTop: 0,
+        paddingBottom: 0,
+      },
+    },
   },
 });

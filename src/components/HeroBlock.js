@@ -30,7 +30,7 @@ const HeroBlock = () => {
   const classes = useStyles();
   return (
     <div className={classes.heroContainer}>
-      <img src={MainImage} className={classes.heroimage} />
+      <img src={MainImage} className={classes.heroimage} alt='Hero Block' />
     </div>
   );
 };

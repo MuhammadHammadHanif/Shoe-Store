@@ -11,8 +11,8 @@ const CategoryCollection = ({ title, start = 0, end = 3 }) => {
     <Fragment>
       <LineText text={title} />
       <Grid container direction='row' justify='center'>
-        {products.slice(start, end).map((product) => (
-          <Grid container item lg={2} md={3} sm={4} justify='center'>
+        {products.slice(start, end).map((product, i) => (
+          <Grid key={i} container item lg={2} md={3} sm={4} justify='center'>
             <Card
               name={product.p_name}
               img={product.p_image}

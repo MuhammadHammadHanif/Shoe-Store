@@ -59,7 +59,7 @@ const ShoeCard = ({ img, name, price, stock }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.cardContainer}>
-      <img src={img} className={classes.img} />
+      <img src={img} className={classes.img} alt='Shoe' />
       <div className={classes.centerContent}>
         <Typography className={classes.name}>{name}</Typography>
         <Typography className={classes.price}>{price}</Typography>

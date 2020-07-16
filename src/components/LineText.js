@@ -5,10 +5,18 @@ import makeStyles from '@material-ui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   lineContainer: {
-    margin: '30px 0',
+    margin: '20px 0',
+    [theme.breakpoints.down('sm')]: {
+      margin: '10px 0',
+    },
   },
   textStyle: {
     fontFamily: 'Montserrat',
+    fontWeight: 300,
+    fontSize: '1.5rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
   },
 }));
 
@@ -17,7 +25,7 @@ const LineText = ({ text }) => {
   return (
     <Fragment>
       <div className={classes.lineContainer}>
-        <Typography variant='h5' className='lineText'>
+        <Typography className='lineText'>
           <span className={classes.textStyle}>{text}</span>
         </Typography>
       </div>

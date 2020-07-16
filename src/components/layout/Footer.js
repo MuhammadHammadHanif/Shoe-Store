@@ -8,6 +8,8 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import Hidden from '@material-ui/core/Hidden';
 
+import { secondaryMenu, primaryMenu } from '../utils/MenuLinks';
+
 const useStyles = makeStyles((theme) => ({
   footerContainer: {
     marginTop: '50px',
@@ -87,35 +89,18 @@ const Footer = () => {
           <Grid item>
             <Grid container direction='row'>
               <Grid item direction='column'>
-                <Grid item className={classes.link}>
-                  Home
-                </Grid>
-                <Grid item className={classes.link}>
-                  About Us
-                </Grid>
-                <Grid item className={classes.link}>
-                  My Account
-                </Grid>
-                <Grid item className={classes.link}>
-                  Contact Us
-                </Grid>
+                {secondaryMenu.map((menu, i) => (
+                  <Grid item key={i} className={classes.link}>
+                    {menu.name}
+                  </Grid>
+                ))}
               </Grid>
               <Grid item direction='column'>
-                <Grid item className={classes.link}>
-                  Home
-                </Grid>
-                <Grid item className={classes.link}>
-                  Best Seller
-                </Grid>
-                <Grid item className={classes.link}>
-                  Shoes
-                </Grid>
-                <Grid item className={classes.link}>
-                  Collection
-                </Grid>
-                <Grid item className={classes.link}>
-                  What New
-                </Grid>
+                {primaryMenu.map((menu, i) => (
+                  <Grid item key={i} className={classes.link}>
+                    {menu.name}
+                  </Grid>
+                ))}
               </Grid>
               <Grid item direction='column'>
                 <Grid item>
