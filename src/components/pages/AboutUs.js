@@ -20,6 +20,66 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '2rem',
     borderBottom: '1px solid #e5e5e5',
   },
+  description: {
+    margin: '10px 0px',
+    fontFamily: 'Montserrat',
+    textTransform: 'none',
+    fontWeight: 300,
+    fontSize: '0.9rem',
+    lineHeight: 1.5,
+  },
+  productPrice: {
+    fontFamily: 'Montserrat',
+    textTransform: 'none',
+    fontWeight: 600,
+    fontSize: '1.2rem',
+    marginTop: '8px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
+  },
+  price: {
+    fontFamily: 'Montserrat',
+    textTransform: 'none',
+    fontWeight: 300,
+    fontSize: '1.2rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
+  },
+  stockText: {
+    fontFamily: 'Montserrat',
+    textTransform: 'none',
+    fontWeight: 600,
+    fontSize: '1rem',
+    marginTop: '8px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem',
+    },
+  },
+  stockPrice: {
+    fontFamily: 'Montserrat',
+    textTransform: 'none',
+    fontWeight: 300,
+    fontSize: '0.8rem',
+  },
+  button: {
+    margin: '10px 0px',
+    background: theme.palette.common.black,
+    color: theme.palette.common.white,
+    '&:hover': {
+      background: theme.palette.secondary.light,
+    },
+  },
+  buttonText: {
+    padding: '5px 0px',
+    fontFamily: 'Montserrat',
+    fontSize: '0.7rem',
+    fontWeight: 500,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.6rem',
+    },
+  },
 }));
 
 const AboutUs = () => {

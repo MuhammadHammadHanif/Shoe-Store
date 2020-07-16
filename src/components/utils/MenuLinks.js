@@ -9,7 +9,7 @@ export const secondaryMenu = [
   },
   {
     name: 'Contact Us',
-    link: '/contact',
+    link: '/progress',
   },
 ];
 export const primaryMenu = [
@@ -19,18 +19,18 @@ export const primaryMenu = [
   },
   {
     name: 'Best Sellers',
-    link: '/bestsellers',
+    link: '/progress',
   },
   {
     name: 'Shoes',
-    link: '/shoes',
+    link: '/progress',
   },
   {
     name: 'Collection',
-    link: '/collection',
+    link: '/progress',
   },
   {
     name: 'What New',
-    link: '/new',
+    link: '/progress',
   },
 ];

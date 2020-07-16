@@ -19,7 +19,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Hidden from '@material-ui/core/Hidden';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { secondaryMenu, primaryMenu } from '../../utils/MenuLinks';
 
@@ -233,7 +233,13 @@ const Header = () => {
         {/* Logo Menu */}
         {matchesExtraSmall ? undefined : (
           <Toolbar className={classes.primaryMenu}>
-            <Button variant='outlined' className={classes.logo} disableRipple>
+            <Button
+              variant='outlined'
+              className={classes.logo}
+              disableRipple
+              component={Link}
+              to='/'
+            >
               <Typography className={classes.logoText}>
                 Shoes <span className={classes.secondaryLogoText}>Wear's</span>
               </Typography>
@@ -259,7 +265,7 @@ const Header = () => {
             ) : undefined}
           </Toolbar>
         )}
-        {/* Drawer Menu */}
+        {/* Drawer Menu and Primary Menu */}
         {matchesSmall ? (
           drawer
         ) : (
@@ -275,6 +281,8 @@ const Header = () => {
                   label={menu.name.toUpperCase()}
                   className={classes.primaryTab}
                   disableRipple
+                  component={Link}
+                  to={menu.link}
                 />
               ))}
             </Tabs>

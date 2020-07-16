@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import Hidden from '@material-ui/core/Hidden';
+import { Link } from 'react-router-dom';
 
 import { secondaryMenu, primaryMenu } from '../utils/MenuLinks';
 
@@ -79,7 +80,13 @@ const Footer = () => {
     <div className={classes.footerContainer}>
       <Grid container direction='column' alignItems='center'>
         <Grid item>
-          <Button variant='outlined' className={classes.logo} disableRipple>
+          <Button
+            variant='outlined'
+            className={classes.logo}
+            disableRipple
+            component={Link}
+            to='/'
+          >
             <Typography className={classes.logoText}>
               Shoes <span className={classes.secondaryLogoText}>Wear's</span>
             </Typography>
@@ -90,16 +97,20 @@ const Footer = () => {
             <Grid container direction='row'>
               <Grid item direction='column'>
                 {secondaryMenu.map((menu, i) => (
-                  <Grid item key={i} className={classes.link}>
-                    {menu.name}
-                  </Grid>
+                  <Link to={menu.link} style={{ textDecoration: 'none' }}>
+                    <Grid item key={i} className={classes.link}>
+                      {menu.name}
+                    </Grid>
+                  </Link>
                 ))}
               </Grid>
               <Grid item direction='column'>
                 {primaryMenu.map((menu, i) => (
-                  <Grid item key={i} className={classes.link}>
-                    {menu.name}
-                  </Grid>
+                  <Link to={menu.link} style={{ textDecoration: 'none' }}>
+                    <Grid item key={i} className={classes.link}>
+                      {menu.name}
+                    </Grid>
+                  </Link>
                 ))}
               </Grid>
               <Grid item direction='column'>

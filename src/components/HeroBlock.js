@@ -1,8 +1,6 @@
 import React from 'react';
 import makeStyles from '@material-ui/styles/makeStyles';
 
-import MainImage from '../assests/wood-shoes-pier-17465.jpg';
-
 const useStyles = makeStyles((theme) => ({
   heroimage: {
     width: '100%',
@@ -30,7 +28,11 @@ const HeroBlock = () => {
   const classes = useStyles();
   return (
     <div className={classes.heroContainer}>
-      <img src={MainImage} className={classes.heroimage} alt='Hero Block' />
+      <img
+        src='/img/main-image.jpg'
+        className={classes.heroimage}
+        alt='Hero Block'
+      />
     </div>
   );
 };
