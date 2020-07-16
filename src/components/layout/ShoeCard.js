@@ -4,30 +4,39 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-import shoeImage from '../../assests/shoes/1.jpg';
-
 const useStyles = makeStyles((theme) => ({
+  cardContainer: {
+    maxWidth: '300px',
+    margin: '5px',
+    overflow: 'hidden',
+  },
   img: {
-    height: '20em',
+    height: '15em',
+    [theme.breakpoints.down('md')]: {
+      height: '13em',
+    },
   },
   centerContent: {
     textAlign: 'center',
-    padding: '10px 0px',
+    padding: '10px 0',
   },
   name: {
     fontFamily: 'Montserrat',
-    fontSize: '1.2rem',
+    fontSize: '1rem',
     fontWeight: 400,
+    [theme.breakpoints.down('md')]: {
+      fontSize: '0.9rem',
+    },
   },
   price: {
     padding: '5px 0px',
     fontFamily: 'Montserrat',
-    fontSize: '1rem',
-    fontWeight: 300,
+    fontSize: '0.9rem',
+    fontWeight: 400,
   },
   stock: {
     fontFamily: 'Montserrat',
-    fontSize: '0.8rem',
+    fontSize: '0.7rem',
     fontWeight: 500,
   },
   button: {
@@ -41,27 +50,26 @@ const useStyles = makeStyles((theme) => ({
   buttonText: {
     padding: '5px 0px',
     fontFamily: 'Montserrat',
-    fontSize: '0.8rem',
+    fontSize: '0.7rem',
     fontWeight: 500,
   },
 }));
 
-function ShoeCard() {
+const ShoeCard = ({ img, name, price, stock }) => {
   const classes = useStyles();
-
   return (
-    <Paper>
-      <img src={shoeImage} className={classes.img} />
+    <Paper className={classes.cardContainer}>
+      <img src={img} className={classes.img} />
       <div className={classes.centerContent}>
-        <Typography className={classes.name}>NMD_R1 SHOES</Typography>
-        <Typography className={classes.price}>$100.00</Typography>
-        <Typography className={classes.stock}>In Stock</Typography>
+        <Typography className={classes.name}>{name}</Typography>
+        <Typography className={classes.price}>{price}</Typography>
+        <Typography className={classes.stock}>{stock}</Typography>
         <Button className={classes.button}>
           <Typography className={classes.buttonText}>Add to Cart</Typography>
         </Button>
       </div>
     </Paper>
   );
-}
+};
 
 export default ShoeCard;

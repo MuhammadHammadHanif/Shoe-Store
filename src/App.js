@@ -6,13 +6,16 @@ import Header from './components/layout/header/Header';
 import Footer from './components/layout/Footer';
 import theme from './components/layout/Theme';
 import Home from './components/pages/Home';
+import { GlobalProvider } from './context/GlobalState';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
-      <Home />
-      <Footer />
+      <GlobalProvider>
+        <Header />
+        <Home />
+        <Footer />
+      </GlobalProvider>
     </ThemeProvider>
   );
 }

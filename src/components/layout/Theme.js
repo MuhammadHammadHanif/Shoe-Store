@@ -26,9 +26,34 @@ export default createMuiTheme({
       minWidth: 10,
       padding: '0px 8px',
     },
+    searchFieldContainer: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginLeft: 'auto',
+      borderBottom: '1px solid #e5e5e5',
+      borderTop: '1px solid #e5e5e5',
+    },
+    searchFieldInput: {
+      padding: '5px 0px',
+      fontFamily: 'Montserrat',
+      fontSize: '0.8rem',
+    },
+    logo: {
+      '&:hover': {
+        background: 'transparent',
+      },
+    },
+    logoText: {
+      fontFamily: 'Montserrat',
+      fontWeight: '300',
+      fontSize: '2rem',
+    },
+    secondaryLogoText: {
+      fontWeight: '500',
+    },
   },
   overrides: {
-    // Style sheet name ⚛️
     MuiTab: {
       root: {
         minHeight: 20,

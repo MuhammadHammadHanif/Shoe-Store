@@ -3,28 +3,71 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import makeStyles from '@material-ui/styles/makeStyles';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search';
+import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles((theme) => ({
   footerContainer: {
-    margin: '50px 30px 0px 30px',
+    marginTop: '50px',
+    padding: '20px 0 0 0',
     borderTop: '1px solid #e5e5e5',
-    height: '10em',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  },
+  logo: {
+    ...theme.typography.logo,
+    marginBottom: '15px',
   },
   logoText: {
-    fontFamily: 'Montserrat',
-    fontWeight: '300',
-    fontSize: '2rem',
+    ...theme.typography.logoText,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.5rem',
+    },
   },
   secondaryLogoText: {
-    fontWeight: '500',
+    ...theme.typography.secondaryLogoText,
   },
-  footerText: {
+  copyRightText: {
     fontFamily: 'Montserrat',
     fontWeight: '400',
     fontSize: '0.8rem',
+    color: theme.palette.common.white,
+  },
+  copyRightContainer: {
+    height: '2rem',
+    width: '100%',
+    background: 'black',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '5px 0',
+  },
+  gridItem: {
+    margin: '3rem',
+  },
+  link: {
+    ...theme.typography.secondaryTab,
+    margin: '1rem 15rem 1rem auto',
+    [theme.breakpoints.down('md')]: {
+      margin: '1rem 12rem 1rem auto',
+    },
+  },
+  searchFieldContainer: {
+    ...theme.typography.searchFieldContainer,
+    marginTop: '0.5rem',
+    width: '20em',
+    [theme.breakpoints.down('md')]: {
+      width: '19rem',
+    },
+  },
+  searchFieldInput: {
+    ...theme.typography.searchFieldInput,
+  },
+  searchHeading: {
+    marginTop: '1rem',
+    fontFamily: 'Montserrat',
+    fontWeight: 500,
+    fontSize: '1rem',
   },
 }));
 
@@ -32,15 +75,71 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <div className={classes.footerContainer}>
-      <Button variant='outlined'>
-        <Typography className={classes.logoText}>
-          Shoes <span className={classes.secondaryLogoText}>Wear's</span>
+      <Grid container direction='column' alignItems='center'>
+        <Grid item>
+          <Button variant='outlined' className={classes.logo} disableRipple>
+            <Typography className={classes.logoText}>
+              Shoes <span className={classes.secondaryLogoText}>Wear's</span>
+            </Typography>
+          </Button>
+        </Grid>
+        <Hidden smDown>
+          <Grid item>
+            <Grid container direction='row'>
+              <Grid item direction='column'>
+                <Grid item className={classes.link}>
+                  Home
+                </Grid>
+                <Grid item className={classes.link}>
+                  About Us
+                </Grid>
+                <Grid item className={classes.link}>
+                  My Account
+                </Grid>
+                <Grid item className={classes.link}>
+                  Contact Us
+                </Grid>
+              </Grid>
+              <Grid item direction='column'>
+                <Grid item className={classes.link}>
+                  Home
+                </Grid>
+                <Grid item className={classes.link}>
+                  Best Seller
+                </Grid>
+                <Grid item className={classes.link}>
+                  Shoes
+                </Grid>
+                <Grid item className={classes.link}>
+                  Collection
+                </Grid>
+                <Grid item className={classes.link}>
+                  What New
+                </Grid>
+              </Grid>
+              <Grid item direction='column'>
+                <Grid item>
+                  <Typography className={classes.searchHeading}>
+                    SEARCH SHOES
+                  </Typography>
+                  <div className={classes.searchFieldContainer}>
+                    <InputBase
+                      className={classes.searchFieldInput}
+                      placeholder='SEARCH'
+                    />
+                    <SearchIcon />
+                  </div>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Hidden>
+      </Grid>
+      <div className={classes.copyRightContainer}>
+        <Typography className={classes.copyRightText}>
+          Copyright © 2020 Muhammad Hammad Hanif
         </Typography>
-      </Button>
-
-      <Typography className={classes.footerText}>
-        Copyright 2020 Muhammad Hammad Hanif
-      </Typography>
+      </div>
     </div>
   );
 };

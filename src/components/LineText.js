@@ -5,7 +5,7 @@ import makeStyles from '@material-ui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   lineContainer: {
-    margin: '25px 0',
+    margin: '30px 0',
   },
   textStyle: {
     fontFamily: 'Montserrat',
