@@ -119,7 +119,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
   },
   drawer: {
-    width: '60%',
+    width: '40%',
     padding: '20px 20px',
   },
   drawerHeading: {
@@ -166,6 +166,8 @@ const Header = () => {
                   setOpenDrawer(false);
                 }}
                 divider
+                to={menu.link}
+                component={Link}
               >
                 <ListItemText className={classes.drawerItem} disableTypography>
                   {menu.name}
@@ -184,6 +186,8 @@ const Header = () => {
                 setOpenDrawer(false);
               }}
               divider
+              to={menu.link}
+              component={Link}
             >
               <ListItemText className={classes.drawerItem} disableTypography>
                 {menu.name}
